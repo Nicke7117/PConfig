@@ -51,11 +51,17 @@ class Config:
     def create_config(self):
         self.open_file()
         self.write_paths()
-        self.write_links()
         self.write_browser()
         self.write_browser_path()
+        self.write_links()
         self.close_file()
 
+
+    def open_apps(self, line):
+            try:
+                subprocess.run(line)
+            except subprocess.SubprocessError as error:
+                print(error)
 
 def main():
     parser = argparse.ArgumentParser(description="Create, execute or delete a config")
@@ -86,6 +92,8 @@ def main():
             os.makedirs(Constants.FOLDER_PATH)
         config.create_config()
     elif args.command == "execute":
+        config = Config(args.filename)
+        config.execute()
         print("execute")
     elif args.command == "delete":
         print("delete")
