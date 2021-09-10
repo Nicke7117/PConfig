@@ -102,6 +102,9 @@ def main():
 
     subparser = parser.add_subparsers(dest="command", required=True)
 
+    parser_delete = subparser.add_parser("delete", help="Delete config")
+    parser_delete.add_argument("filename", type=str, help="The file you want to delete")
+
     parser_execute = subparser.add_parser("execute", help="Execute config")
     parser_execute.add_argument("filename" , type=str, help="The file you want to execute")
 
