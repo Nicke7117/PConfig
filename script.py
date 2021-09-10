@@ -73,6 +73,30 @@ class Config:
     def read_file(self):
         self.file = open(os.path.join(Constants.FOLDER_PATH, self.filename), "r")
 
+
+    def execute(self):
+        string_type = None
+        self.read_file()
+        lines = self.file.readlines()
+        for i in range(0, len(lines)):
+            line = lines[i].strip()
+            string_types = ["Paths:", "Links:", "Browser:", "Browser path:"]
+            if not line:
+                break
+            if line in string_types:
+                string_type = line
+                continue
+            if string_type == "Paths:":
+                self.open_apps(line)
+            elif string_type == "Browser:":
+                global browser
+                browser = line
+            elif string_type == "Browser path:":
+                global browser_path
+                browser_path = line
+            elif string_type == "Links:":
+                self.open_links(line)
+
 def main():
     parser = argparse.ArgumentParser(description="Create, execute or delete a config")
 
