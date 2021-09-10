@@ -69,6 +69,9 @@ class Config:
                 subprocess.run(line)
             except subprocess.SubprocessError as error:
                 print(error)
+    
+    def read_file(self):
+        self.file = open(os.path.join(Constants.FOLDER_PATH, self.filename), "r")
 
 def main():
     parser = argparse.ArgumentParser(description="Create, execute or delete a config")
