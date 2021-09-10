@@ -56,6 +56,13 @@ class Config:
         self.write_links()
         self.close_file()
 
+    def open_links(self, line):
+        try:
+            webbrowser.register(browser, None, webbrowser.BackgroundBrowser(browser_path))
+            webbrowser.get(browser).open_new_tab(line)
+        except webbrowser.Error as error:
+            print(error)
+
 
     def open_apps(self, line):
             try:
