@@ -97,6 +97,13 @@ class Config:
             elif string_type == "Links:":
                 self.open_links(line)
 
+    def delete(self):
+        try:
+            file = os.path.join(Constants.FOLDER_PATH, self.filename)
+            os.remove(file)
+        except FileNotFoundError as error:
+            print(error)
+
 def main():
     parser = argparse.ArgumentParser(description="Create, execute or delete a config")
 
@@ -117,7 +124,6 @@ def main():
     required_args = parser_create.add_argument_group("required arguments")
     required_args.add_argument("-fn", "--filename", type=str, required=True)
 
-    parser_create = subparser.add_parser("delete")
 
     args = parser.parse_args()
 
@@ -133,6 +139,8 @@ def main():
         config.execute()
         print("execute")
     elif args.command == "delete":
+        config = Config(args.filename)
+        config.delete()
         print("delete")
 
 if __name__ == "__main__":
