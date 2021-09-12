@@ -65,7 +65,7 @@ class Config:
 
     def open_apps(self, line):
         try:
-            subprocess.run(line)
+            subprocess.Popen(line)
         except subprocess.SubprocessError as error:
             print(error)
 
