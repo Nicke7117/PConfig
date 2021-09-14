@@ -117,7 +117,7 @@ def main():
     parser_execute.add_argument(
         "filename", type=str, help="The file you want to execute")
 
-    parser_create = subparser.add_parser("create")
+    parser_create = subparser.add_parser("create", help="Create config")
     parser_create.add_argument("-p", "--paths", type=str, nargs="*")
     parser_create.add_argument("-l", "--links", type=str, nargs="*")
     parser_create.add_argument("-b", "--browser", type=str)
