@@ -2,7 +2,7 @@ import os
 import argparse
 import subprocess
 import webbrowser
-import Constants
+import constants
 import sys
 
 
@@ -17,7 +17,7 @@ class Config:
     def open_file(self):
         try:
             self.file = open(os.path.join(
-                Constants.FOLDER_PATH, self.filename), "x")
+                constants.FOLDER_PATH, self.filename), "x")
         except FileExistsError as error:
             print(error)
             sys.exit()
@@ -71,7 +71,7 @@ class Config:
 
     def read_file(self):
         self.file = open(os.path.join(
-            Constants.FOLDER_PATH, self.filename), "r")
+            constants.FOLDER_PATH, self.filename), "r")
 
     def execute(self):
         string_type = None
@@ -98,7 +98,7 @@ class Config:
 
     def delete(self):
         try:
-            file = os.path.join(Constants.FOLDER_PATH, self.filename)
+            file = os.path.join(constants.FOLDER_PATH, self.filename)
             os.remove(file)
         except FileNotFoundError as error:
             print(error)
@@ -130,8 +130,8 @@ def main():
     if args.command == "create":
         config = Config(args.filename, args.paths, args.links,
                         args.browser, args.browserpath)
-        if not os.path.exists(Constants.FOLDER_PATH):
-            os.makedirs(Constants.FOLDER_PATH)
+        if not os.path.exists(constants.FOLDER_PATH):
+            os.makedirs(constants.FOLDER_PATH)
         config.create_config()
     elif args.command == "execute":
         config = Config(args.filename)
