@@ -34,6 +34,9 @@ optional arguments:
 ### Creating a config
 - Remember to put the paths inside  `"quotation marks"`
 - Example usage: `script.py create -fn programmingConfig -p "path\to\Microsoft VS Code\Code.exe" "path\to\spotify.exe" -b firefox -bp "path\to\firefox.exe" -l stackoverflow.com github.com protonmail.com`
+- The image below contains all the browsers supported
+![image](https://user-images.githubusercontent.com/79015256/133335842-2e72bdb4-c142-4247-abeb-2b9814b83a58.png)
+
 
 ```git
 usage: script.py create [-h] [-p [PATHS ...]] [-l [LINKS ...]] [-b BROWSER] [-bp BROWSERPATH] -fn FILENAME
