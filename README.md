@@ -2,17 +2,17 @@
 PConfig is a script that helps you to make windows configurations. You can make the config open urls in your browser and start windows apps. You could use this script to create a config for example for your mathematics class, the script could start your calculator and open your notes and other stuff from your browser with a single command.
 
 ## Installation
-- Clone the repository
+1. Clone the repository
 
 ```git
 git clone https://github.com/Nicke7117/PConfig.git
 ```
-- Change your current directory to the PConfig repository
+2. Change your current directory to the PConfig repository
 
 ## Setting up
 
-- Open ```Constants.py ```
-- Add the folder path you want to store the .txt config files to ```FOLDER_PATH```, for example ```FOLDER_PATH = "C:\Users\user123\desktop"```
+1. Open ```Constants.py ```
+2. Add the folder path you want to store the .txt config files to ```FOLDER_PATH```, for example ```FOLDER_PATH = "C:\Users\user123\desktop"```
 
 ## Usage
 
