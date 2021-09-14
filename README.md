@@ -16,7 +16,7 @@ git clone https://github.com/Nicke7117/PConfig.git
 
 ## Usage
 
-- First you have to either select `delete`, `execute`, or `create`
+- You can either `delete`, `execute`, or `create` a config
 
 ```git
 usage: script.py [-h] {delete,execute,create} ...
@@ -31,7 +31,9 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
 ```
-- Here are the arguments for creating a config
+### Creating a config
+- Remember to put the paths inside  `"quotation marks"`
+- Example usage: `script.py create -fn programmingConfig -p "path\to\Microsoft VS Code\Code.exe" "path\to\spotify.exe" -b firefox -bp "path\to\firefox.exe" -l stackoverflow.com github.com protonmail.com`
 
 ```git
 usage: script.py create [-h] [-p [PATHS ...]] [-l [LINKS ...]] [-b BROWSER] [-bp BROWSERPATH] -fn FILENAME
@@ -46,7 +48,8 @@ optional arguments:
 required arguments:
   -fn FILENAME, --filename FILENAME
 ```
-- The arguments if you want to execute a config
+### Executing a config
+- Example usage: `script.py execute programmingConfig`
 ```git
 usage: script.py execute [-h] filename
 
@@ -56,7 +59,8 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
-- The arguments if you want to delete a config
+### Deleting a config
+- Example usage: `script.py delete programmngConfig`
 ```git
 usage: script.py delete [-h] filename
 
